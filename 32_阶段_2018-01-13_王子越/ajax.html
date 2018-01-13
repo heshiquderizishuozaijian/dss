@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+
+window.onload = function() {
+		var xhr = null;
+		try {
+			xhr = new XMLHttpRequest();
+		} catch (e) {
+			xhr = new ActiveXObject('Microsoft.XMLHTTP');
+		}
+		
+		xhr.open('get','getNews.php',true);
+		xhr.send();
+		
+		xhr.onreadystatechange = function() {
+			
+			if ( xhr.readyState == 4 ) {
+				if ( xhr.status == 200 )
+					var data = JSON.parse( xhr.responseText );
+					var oUl = document.getElementById('ul1');
+					var html = '';
+					for (var i=0; i<data.length; i++) {
+						html += '<tr></tr><td>'+data[i].title+'</td><td>'+data[i].date+'</td></tr>';
+					}
+					oUl.innerHTML = html;
+				} else {
+					alert( xhr.status);
+				}
+			}
+			
+		}
+		
+
+
+</script>
+    <style>
+       td{
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+   <table id="ul1">
+
+   </table>
+
+</body>
+</html>
