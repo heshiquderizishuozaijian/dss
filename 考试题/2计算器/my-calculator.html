@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <script type="text/javascript" src="js/vue.js"></script>
+    <meta charset="UTF-8">
+    <title>my-calculator</title>
+</head>
+<body>
+<div id="calculator">
+    <!--显示框-->
+    <input-box v-bind:input-show="inputShow">
+
+    </input-box>
+    <btn-list>
+        <div v-on:click="operator('clear')" class=" btn-30 btn-radius color-red clear-marginleft">C</div>
+        <div v-on:click="operator('opposite')" class=" btn-30 btn-radius color-blue">+/-</div>
+        <div v-on:click="operator('percent')" class=" btn-30 btn-radius color-blue">%</div>
+        <div v-on:click="operator('backspace')" class=" btn-70 btn-radius color-red font-14">←</div>
+        <div v-on:click="typetoinput('7')" class=" btn-30 btn-radius clear-marginleft">7</div>
+        <div v-on:click="typetoinput('8')" class=" btn-30 btn-radius">8</div>
+        <div v-on:click="typetoinput('9')" class=" btn-30 btn-radius">9</div>
+        <div v-on:click="operator('plus')" class=" btn-30 btn-radius color-blue font-14">+</div>
+        <div v-on:click="operator('minus')" class=" btn-30 btn-radius color-blue font-14">-</div>
+        <div v-on:click="typetoinput('4')" class=" btn-30 btn-radius clear-marginleft">4</div>
+        <div v-on:click="typetoinput('5')" class=" btn-30 btn-radius">5</div>
+        <div v-on:click="typetoinput('6')" class=" btn-30 btn-radius">6</div>
+        <div v-on:click="operator('multiply')" class=" btn-30 btn-radius color-blue font-14">×</div>
+        <div v-on:click="operator('divide')" class=" btn-30 btn-radius color-blue font-12">÷</div>
+        <div v-on:click="typetoinput('1')" class=" btn-30 btn-radius clear-marginleft">1</div>
+        <div v-on:click="typetoinput('2')" class=" btn-30 btn-radius">2</div>
+        <div v-on:click="typetoinput('3')" class=" btn-30 btn-radius">3</div>
+        <div v-on:click="operator('pow')" class=" btn-30 btn-radius color-blue font-14">×²</div>
+        <div v-on:click="operator('sqrt')" class=" btn-30 btn-radius color-blue font-12">√</div>
+        <div v-on:click="typetoinput('0')" class=" btn-70 btn-radius clear-marginleft">0</div>
+        <div v-on:click="typetoinput('.')" class=" btn-30 btn-radius">.</div>
+        <div v-on:click="operator('result')" class=" btn-70 btn-radius color-red font-14">=</div>
+    </btn-list>
+</div>
+<script type="text/javascript" src="js/my-app.js"></script>
+</body>
+</html>
